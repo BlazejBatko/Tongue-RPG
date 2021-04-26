@@ -54,12 +54,16 @@
 | 7 | FL Studio | Gra jest tworzona w oparciu o język programowania GDScript – wysoko rozwinięty, dynamiczny jezyk oprogramowania który bardzo przypomina jezyk Python | 3.2 |
 | 8 | GDScript | Wykonanie efektów dźwiękowych i muzyki. | 3.2 |
 
+
+# Wersja V0.3
+**Funkcja i animacja niszczenia obiektów**
+![NiszczenieTrawy](https://user-images.githubusercontent.com/61236659/116074177-a8f48d00-a691-11eb-8ebb-86b95dec92c6.gif)
+
 # Wersja V0.2
-**Added player animations in all directions, added attack animations**
-**collisions with cliffs, and terrain objects**
+**Animacje ruchu i ataku gracza we wszystkich kierunkach, kolizje z obiektami**
 ![TongueRPG V02](https://user-images.githubusercontent.com/61236659/113924724-71a96380-97ea-11eb-988b-65d5a09aa189.gif)
 
 # Wersja V0.1
-**added collisions, player animations, movement and layers**
+**dodanie kolizji, animacji, ruchu gracza i warstw terenu**
 ![Alt Text](https://recordit.co/BtURESt5U3.gif)
 

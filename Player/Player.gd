@@ -24,7 +24,7 @@ func _ready():
 # Called when the node enters the scene tree for the first time.
 
 	
-
+##Smh manipulative by the physics MOVE ROLL ATTACK movement
 func _physics_process(delta):
 	match state:
 		MOVE:

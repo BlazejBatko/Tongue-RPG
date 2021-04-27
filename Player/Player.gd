@@ -13,15 +13,19 @@ export var MAX_SPEED = 80
 export var  ACCELERATION = 500
 export var FRICTION = 1000
 var roll_vector = Vector2.DOWN
+var stats = PlayerStats
 
 
 onready var animationPlayer = $AnimationPlayer
 onready var animationTree = $AnimationTree
 onready var animationState = animationTree.get("parameters/playback")
 onready var swordHitbox = $HitboxPivot/SwordHitbox
+onready var hurtbox = $Hurtbox
 
 
 func _ready():
+	randomize()
+	stats.connect("no_health", self, "queue_free")
 	animationTree.active = true # animation tree nie bedzie włączone dopóki gra nie wystartuje. (do tworzenia animacji)
 	swordHitbox.knockback_vector = roll_vector
 
@@ -62,6 +66,7 @@ func move_state(delta):
 		
 	move()
 	if Input.is_action_just_pressed("Roll"):
+		
 		state = ROLL
 
 	if Input.is_action_just_pressed("Attack"):
@@ -86,3 +91,9 @@ func attack_animation_finished():
 	
 func roll_animation_finished():
 	state = MOVE
+
+
+func _on_Hurtbox_area_entered(area):
+	stats.health -= 1
+	hurtbox.start_invincibility(0.5)
+	hurtbox.create_hit_effect()

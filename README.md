@@ -54,6 +54,11 @@
 | 7 | FL Studio | Gra jest tworzona w oparciu o język programowania GDScript – wysoko rozwinięty, dynamiczny jezyk oprogramowania który bardzo przypomina jezyk Python | 3.2 |
 | 8 | GDScript | Wykonanie efektów dźwiękowych i muzyki. | 3.2 |
 
+# Wersja V0.4
+**Turlanie się postaci, przeciwnicy, możliwość zadawania obrażeń, animacje zadawania obrażeń, dodanie odpychania przy uderzeniu przeciwników**
+![V0 4](https://user-images.githubusercontent.com/61236659/116167774-45a24380-a701-11eb-9ad9-a6fce07c2cfd.gif)
+
+
 
 # Wersja V0.3
 **Funkcja i animacja niszczenia obiektów**

@@ -3,6 +3,7 @@ extends KinematicBody2D
 
 var velocity = Vector2.ZERO 
 
+const SQLite = preload("res://bin/gdsqlite.gdns")
 enum { #tworzenie zmiennych (stałych) którym przypisywane są wartości: dla tego przypadku MOVE = 0, ROLL = 1, ATTACK = 2.
 	MOVE,
 	ROLL,
@@ -28,6 +29,7 @@ func _ready():
 	stats.connect("no_health", self, "queue_free")
 	animationTree.active = true # animation tree nie bedzie włączone dopóki gra nie wystartuje. (do tworzenia animacji)
 	swordHitbox.knockback_vector = roll_vector
+	
 
 	
 ##Smh manipulative by the physics MOVE ROLL ATTACK movement

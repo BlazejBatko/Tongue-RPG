@@ -5,6 +5,9 @@ var max_hearts = 4 setget set_max_hearts
 
 onready var heartUIFull = $HeartUIFull
 onready var heartUIEmpty = $HeartUIEmpty
+onready var word = $World
+
+
 
 
 func set_hearts(value):
@@ -24,3 +27,4 @@ func _ready():
 	self.hearts = PlayerStats.health
 	PlayerStats.connect("health_changed", self, "set_hearts")
 	PlayerStats.connect("max_health_changed", self, "set_max_hearts")
+	

@@ -1,4 +1,4 @@
-[gd_scene load_steps=60 format=2]
+[gd_scene load_steps=62 format=2]
 
 [ext_resource path="res://World/Bush.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Player/Player.tscn" type="PackedScene" id=2]
@@ -10,6 +10,7 @@
 [ext_resource path="res://UI/HealthUI.tscn" type="PackedScene" id=8]
 [ext_resource path="res://World/Tree.tscn" type="PackedScene" id=9]
 [ext_resource path="res://Teleport.tscn" type="PackedScene" id=10]
+[ext_resource path="res://Label.gd" type="Script" id=12]
 
 [sub_resource type="TileSet" id=1]
 0/name = "DirtTileset.png 0"
@@ -485,6 +486,8 @@ points = PoolVector2Array( 0, 0, 32, 0, 32, 32, 0, 32 )
 } ]
 0/z_index = 0
 
+[sub_resource type="BitmapFont" id=50]
+
 [node name="World" type="Node2D"]
 
 [node name="Background" type="Sprite" parent="."]
@@ -517,12 +520,12 @@ tile_data = PoolIntArray( -65537, 0, 0, -131072, 0, 1, -131071, 0, 1, -131070, 0
 [node name="YSort" type="YSort" parent="."]
 
 [node name="Camera2D" type="Camera2D" parent="YSort"]
-position = Vector2( 576.688, 1049.97 )
+position = Vector2( 134.376, 99.757 )
 current = true
 smoothing_enabled = true
 
 [node name="Player" parent="YSort" instance=ExtResource( 2 )]
-position = Vector2( 576.688, 1049.97 )
+position = Vector2( 134.376, 99.757 )
 
 [node name="RemoteTransform2D" type="RemoteTransform2D" parent="YSort/Player"]
 remote_path = NodePath("../../Camera2D")
@@ -572,7 +575,7 @@ position = Vector2( 167.801, 129.871 )
 position = Vector2( 49.2154, 130.71 )
 
 [node name="Teleport" parent="YSort/Bushes" instance=ExtResource( 10 )]
-position = Vector2( 366.08, 63.7386 )
+position = Vector2( 366.08, 63.5717 )
 
 [node name="Grass" type="YSort" parent="YSort"]
 
@@ -749,3 +752,14 @@ position = Vector2( 304.056, 136.472 )
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
 [node name="HealthUI" parent="CanvasLayer" instance=ExtResource( 8 )]
+
+[node name="Label" type="Label" parent="CanvasLayer"]
+margin_left = 86.9688
+margin_top = 46.5879
+margin_right = 223.969
+margin_bottom = 115.588
+custom_fonts/font = SubResource( 50 )
+script = ExtResource( 12 )
+__meta__ = {
+"_edit_use_anchors_": false
+}

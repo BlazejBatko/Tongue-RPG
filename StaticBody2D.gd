@@ -24,7 +24,7 @@ func text_entered(text):
 	sprawdzanie() 
 	
 func _on_Area2D_body_entered(body):
-	labelText.set_text(slowo)
+	labelText.set_text("Przetłumacz podane słowo:\n"+slowo)
 	
 	
 func readFromDB():	

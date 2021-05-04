@@ -1,4 +1,4 @@
-[gd_scene load_steps=60 format=2]
+[gd_scene load_steps=63 format=2]
 
 [ext_resource path="res://World/Bush.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Player/Player.tscn" type="PackedScene" id=2]
@@ -10,6 +10,9 @@
 [ext_resource path="res://UI/HealthUI.tscn" type="PackedScene" id=8]
 [ext_resource path="res://World/Tree.tscn" type="PackedScene" id=9]
 [ext_resource path="res://Teleport.tscn" type="PackedScene" id=10]
+[ext_resource path="res://Camera2D.tscn" type="PackedScene" id=11]
+[ext_resource path="res://World.gd" type="Script" id=12]
+[ext_resource path="res://BLAZEJ.mp3" type="AudioStream" id=13]
 
 [sub_resource type="TileSet" id=1]
 0/name = "DirtTileset.png 0"
@@ -486,9 +489,10 @@ points = PoolVector2Array( 0, 0, 32, 0, 32, 32, 0, 32 )
 0/z_index = 0
 
 [node name="World" type="Node2D"]
+script = ExtResource( 12 )
 
 [node name="Background" type="Sprite" parent="."]
-position = Vector2( 1.68179, 69.8456 )
+position = Vector2( 77.5609, 517.436 )
 texture = ExtResource( 3 )
 offset = Vector2( 160, 20.5513 )
 region_enabled = true
@@ -511,15 +515,13 @@ tile_data = PoolIntArray( -65537, 0, 0, -131072, 0, 1, -131071, 0, 1, -131070, 0
 
 [node name="Teleport" parent="YSort" instance=ExtResource( 10 )]
 pause_mode = 2
-position = Vector2( 365.373, 63.5717 )
+position = Vector2( 353.122, 65.5717 )
 
-[node name="Camera2D" type="Camera2D" parent="YSort"]
-position = Vector2( 134.376, 99.757 )
-current = true
-smoothing_enabled = true
+[node name="Camera2D" parent="YSort" instance=ExtResource( 11 )]
+position = Vector2( 324.906, 828.714 )
 
 [node name="Player" parent="YSort" instance=ExtResource( 2 )]
-position = Vector2( 134.376, 99.757 )
+position = Vector2( 324.906, 828.714 )
 
 [node name="RemoteTransform2D" type="RemoteTransform2D" parent="YSort/Player"]
 remote_path = NodePath("../../Camera2D")
@@ -743,4 +745,8 @@ position = Vector2( 272.102, 165.062 )
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
 [node name="HealthUI" parent="CanvasLayer" instance=ExtResource( 8 )]
-visible = false
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+pause_mode = 2
+stream = ExtResource( 13 )
+autoplay = true

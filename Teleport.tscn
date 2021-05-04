@@ -1,152 +1,171 @@
-[gd_scene load_steps=31 format=2]
+[gd_scene load_steps=33 format=2]
 
 [ext_resource path="res://StaticBody2D.gd" type="Script" id=1]
 [ext_resource path="res://Pixilart_Sprite_Sheet.png" type="Texture" id=2]
 [ext_resource path="res://Shadows/LargeShadow.png" type="Texture" id=3]
-[ext_resource path="res://DialogBox.tscn" type="PackedScene" id=5]
-[ext_resource path="res://DialogBox.gd" type="Script" id=6]
+[ext_resource path="res://Label.gd" type="Script" id=4]
+[ext_resource path="res://Polygon2D.gd" type="Script" id=5]
+[ext_resource path="res://Effects/TransitionScreen.tscn" type="PackedScene" id=6]
 
-[sub_resource type="AtlasTexture" id=1]
+[sub_resource type="Theme" id=1]
+
+[sub_resource type="AtlasTexture" id=2]
 atlas = ExtResource( 3 )
 region = Rect2( 0, 0, 32, 20 )
 
-[sub_resource type="SpriteFrames" id=2]
+[sub_resource type="SpriteFrames" id=3]
 animations = [ {
-"frames": [ SubResource( 1 ) ],
+"frames": [ SubResource( 2 ) ],
 "loop": true,
 "name": "Shadow",
 "speed": 1.0
 } ]
 
-[sub_resource type="AtlasTexture" id=3]
+[sub_resource type="AtlasTexture" id=4]
 atlas = ExtResource( 2 )
 region = Rect2( 0, 0, 32, 32 )
 
-[sub_resource type="AtlasTexture" id=4]
+[sub_resource type="AtlasTexture" id=5]
 atlas = ExtResource( 2 )
 region = Rect2( 32, 0, 32, 32 )
 
-[sub_resource type="AtlasTexture" id=5]
+[sub_resource type="AtlasTexture" id=6]
 atlas = ExtResource( 2 )
 region = Rect2( 64, 0, 32, 32 )
 
-[sub_resource type="AtlasTexture" id=6]
+[sub_resource type="AtlasTexture" id=7]
 atlas = ExtResource( 2 )
 region = Rect2( 96, 0, 32, 32 )
 
-[sub_resource type="AtlasTexture" id=7]
+[sub_resource type="AtlasTexture" id=8]
 atlas = ExtResource( 2 )
 region = Rect2( 128, 0, 32, 32 )
 
-[sub_resource type="AtlasTexture" id=8]
+[sub_resource type="AtlasTexture" id=9]
 atlas = ExtResource( 2 )
 region = Rect2( 160, 0, 32, 32 )
 
-[sub_resource type="AtlasTexture" id=9]
+[sub_resource type="AtlasTexture" id=10]
 atlas = ExtResource( 2 )
 region = Rect2( 192, 0, 32, 32 )
 
-[sub_resource type="AtlasTexture" id=10]
+[sub_resource type="AtlasTexture" id=11]
 atlas = ExtResource( 2 )
 region = Rect2( 224, 0, 32, 32 )
 
-[sub_resource type="AtlasTexture" id=11]
+[sub_resource type="AtlasTexture" id=12]
 atlas = ExtResource( 2 )
 region = Rect2( 256, 0, 32, 32 )
 
-[sub_resource type="AtlasTexture" id=12]
+[sub_resource type="AtlasTexture" id=13]
 atlas = ExtResource( 2 )
 region = Rect2( 288, 0, 32, 32 )
 
-[sub_resource type="AtlasTexture" id=13]
+[sub_resource type="AtlasTexture" id=14]
 atlas = ExtResource( 2 )
 region = Rect2( 320, 0, 32, 32 )
 
-[sub_resource type="AtlasTexture" id=14]
+[sub_resource type="AtlasTexture" id=15]
 atlas = ExtResource( 2 )
 region = Rect2( 352, 0, 32, 32 )
 
-[sub_resource type="AtlasTexture" id=15]
+[sub_resource type="AtlasTexture" id=16]
 atlas = ExtResource( 2 )
 region = Rect2( 384, 0, 32, 32 )
 
-[sub_resource type="AtlasTexture" id=16]
+[sub_resource type="AtlasTexture" id=17]
 atlas = ExtResource( 2 )
 region = Rect2( 416, 0, 32, 32 )
 
-[sub_resource type="AtlasTexture" id=17]
+[sub_resource type="AtlasTexture" id=18]
 atlas = ExtResource( 2 )
 region = Rect2( 448, 0, 32, 32 )
 
-[sub_resource type="AtlasTexture" id=18]
+[sub_resource type="AtlasTexture" id=19]
 atlas = ExtResource( 2 )
 region = Rect2( 480, 0, 32, 32 )
 
-[sub_resource type="AtlasTexture" id=19]
+[sub_resource type="AtlasTexture" id=20]
 atlas = ExtResource( 2 )
 region = Rect2( 512, 0, 32, 32 )
 
-[sub_resource type="AtlasTexture" id=20]
+[sub_resource type="AtlasTexture" id=21]
 atlas = ExtResource( 2 )
 region = Rect2( 544, 0, 32, 32 )
 
-[sub_resource type="AtlasTexture" id=21]
+[sub_resource type="AtlasTexture" id=22]
 atlas = ExtResource( 2 )
 region = Rect2( 576, 0, 32, 32 )
 
-[sub_resource type="AtlasTexture" id=22]
+[sub_resource type="AtlasTexture" id=23]
 atlas = ExtResource( 2 )
 region = Rect2( 608, 0, 32, 32 )
 
-[sub_resource type="AtlasTexture" id=23]
+[sub_resource type="AtlasTexture" id=24]
 atlas = ExtResource( 2 )
 region = Rect2( 640, 0, 32, 32 )
 
-[sub_resource type="SpriteFrames" id=24]
+[sub_resource type="SpriteFrames" id=25]
 animations = [ {
-"frames": [ SubResource( 3 ), SubResource( 4 ), SubResource( 5 ), SubResource( 6 ), SubResource( 7 ), SubResource( 8 ), SubResource( 9 ), SubResource( 10 ), SubResource( 11 ), SubResource( 12 ), SubResource( 13 ), SubResource( 14 ), SubResource( 15 ), SubResource( 16 ), SubResource( 17 ), SubResource( 18 ), SubResource( 19 ), SubResource( 20 ), SubResource( 21 ), SubResource( 22 ), SubResource( 23 ) ],
+"frames": [ SubResource( 4 ), SubResource( 5 ), SubResource( 6 ), SubResource( 7 ), SubResource( 8 ), SubResource( 9 ), SubResource( 10 ), SubResource( 11 ), SubResource( 12 ), SubResource( 13 ), SubResource( 14 ), SubResource( 15 ), SubResource( 16 ), SubResource( 17 ), SubResource( 18 ), SubResource( 19 ), SubResource( 20 ), SubResource( 21 ), SubResource( 22 ), SubResource( 23 ), SubResource( 24 ) ],
 "loop": true,
 "name": "Animate",
 "speed": 20.0
 } ]
 
-[sub_resource type="CapsuleShape2D" id=25]
+[sub_resource type="CapsuleShape2D" id=26]
 radius = 11.5705
 height = 6.46312
 
 [node name="Teleport" type="StaticBody2D"]
 script = ExtResource( 1 )
 
-[node name="Polygon2D" parent="." instance=ExtResource( 5 )]
-position = Vector2( -120.952, -182.059 )
+[node name="TransitionScreen" parent="." instance=ExtResource( 6 )]
 
-[node name="RichTextLabel" type="RichTextLabel" parent="Polygon2D"]
-margin_left = 24.0
-margin_top = 98.0
-margin_right = 213.0
-margin_bottom = 151.0
-bbcode_enabled = true
-script = ExtResource( 6 )
+[node name="Polygon2D" type="Polygon2D" parent="."]
+color = Color( 0.113725, 0.113725, 0.113725, 1 )
+polygon = PoolVector2Array( -64.0257, 16.1148, -63.232, 63.7368, 79.6341, 64.5305, 79.6341, 16.9085 )
+script = ExtResource( 5 )
+
+[node name="Label" type="Label" parent="Polygon2D"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = -56.0
+margin_top = 25.0
+margin_right = 74.0
+margin_bottom = 47.0
+size_flags_horizontal = 0
+size_flags_vertical = 0
+theme = SubResource( 1 )
+custom_colors/font_color = Color( 0.729412, 0.0352941, 0.0352941, 1 )
+align = 1
+valign = 1
+script = ExtResource( 4 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Timer" type="Timer" parent="Polygon2D/RichTextLabel"]
-wait_time = 0.05
-autostart = true
+[node name="LineEdit" type="LineEdit" parent="Polygon2D"]
+margin_left = -22.1952
+margin_top = 47.0
+margin_right = 35.8048
+margin_bottom = 71.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [node name="Shadow" type="AnimatedSprite" parent="."]
-position = Vector2( 0.17551, 23.3934 )
+position = Vector2( 0.132446, 25 )
 scale = Vector2( 1.39548, 1.10511 )
-frames = SubResource( 2 )
+frames = SubResource( 3 )
 animation = "Shadow"
 
 [node name="Sprite" type="AnimatedSprite" parent="."]
 position = Vector2( -0.192048, -0.0394267 )
 scale = Vector2( 1.68056, 1.56311 )
-frames = SubResource( 24 )
+frames = SubResource( 25 )
 animation = "Animate"
-frame = 6
+frame = 19
 playing = true
 offset = Vector2( 0, -5 )
 
@@ -154,8 +173,10 @@ offset = Vector2( 0, -5 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
 position = Vector2( 0.132446, -0.132442 )
-shape = SubResource( 25 )
+shape = SubResource( 26 )
 
-[connection signal="timeout" from="Polygon2D/RichTextLabel/Timer" to="Polygon2D/RichTextLabel" method="_on_Timer_timeout"]
+[connection signal="body_entered" from="Area2D" to="Polygon2D" method="_on_Area2D_body_entered"]
 [connection signal="body_entered" from="Area2D" to="." method="_on_Area2D_body_entered"]
-[connection signal="body_entered" from="Area2D" to="Polygon2D/RichTextLabel" method="_on_Area2D_body_entered"]
+[connection signal="body_entered" from="Area2D" to="Polygon2D/Label" method="_on_Area2D_body_entered"]
+[connection signal="body_exited" from="Area2D" to="Polygon2D" method="_on_Area2D_body_exited"]
+[connection signal="body_exited" from="Area2D" to="Polygon2D/Label" method="_on_Area2D_body_exited"]

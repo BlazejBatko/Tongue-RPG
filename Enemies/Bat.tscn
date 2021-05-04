@@ -84,7 +84,6 @@ shape = SubResource( 8 )
 max_health = 2
 
 [node name="PlayerDetectionZone" parent="." instance=ExtResource( 6 )]
-visible = false
 
 [node name="CollisionShape2D" parent="PlayerDetectionZone" index="0"]
 shape = SubResource( 9 )
@@ -104,13 +103,11 @@ position = Vector2( 0, -0.111359 )
 shape = SubResource( 11 )
 
 [node name="WanderController" parent="." instance=ExtResource( 9 )]
+
 [connection signal="area_entered" from="Hurtbox" to="." method="_on_Hurtbox_area_entered"]
 [connection signal="no_health" from="Stats" to="." method="_on_Stats_no_health"]
 
 [editable path="Hurtbox"]
-
 [editable path="PlayerDetectionZone"]
-
 [editable path="Hitbox"]
-
 [editable path="SoftCollision"]

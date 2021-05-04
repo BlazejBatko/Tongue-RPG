@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/BLAZEJ.mp3-3e165fd225b9451c9ff960049c70f2e3.mp3str"
+
+[deps]
+
+source_file="res://BLAZEJ.mp3"
+dest_files=[ "res://.import/BLAZEJ.mp3-3e165fd225b9451c9ff960049c70f2e3.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0

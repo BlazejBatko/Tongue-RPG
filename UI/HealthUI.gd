@@ -5,7 +5,7 @@ var max_hearts = 4 setget set_max_hearts
 
 onready var heartUIFull = $HeartUIFull
 onready var heartUIEmpty = $HeartUIEmpty
-onready var word = $World
+
 
 
 

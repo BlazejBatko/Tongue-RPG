@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/boss (1).mp3-c2375e512bc7c9adda77d7052b7565f7.mp3str"
+
+[deps]
+
+source_file="res://Enemies/boss (1).mp3"
+dest_files=[ "res://.import/boss (1).mp3-c2375e512bc7c9adda77d7052b7565f7.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0

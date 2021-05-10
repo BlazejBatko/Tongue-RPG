@@ -1,7 +1,7 @@
 ### 1. Charakterystyka oprogramowania
 
 **Nazwa pełna:** TongueRPG <br> 
-**Krótki opis:** Klasyczna gra RPG, pomagająca w nauce języka angielskiego, poprzez wykonywanie akcji typu: ulepszenie umiejętności przez tłumaczenie zwrotów z języka polskiego na angielski.
+**Krótki opis:** Klasyczna gra RPG, pomagająca w nauce języka angielskiego, poprzez wykonywanie akcji typu: przechodzenie na wyższy poziom wymagane jest od gracza przetłumaczenie prostych słów z języka polskiego na język angielski.
 
 ### 2. Prawa autorskie 
 

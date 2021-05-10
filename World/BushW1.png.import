@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/Grass.png-c8db04a845a94a62395b8fc264a498a7.stex"
+path="res://.import/BushW1.png-061d5793c53f00772eecc2913510a85b.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://World/Grass.png"
-dest_files=[ "res://.import/Grass.png-c8db04a845a94a62395b8fc264a498a7.stex" ]
+source_file="res://World/BushW1.png"
+dest_files=[ "res://.import/BushW1.png-061d5793c53f00772eecc2913510a85b.stex" ]
 
 [params]
 
@@ -19,7 +19,7 @@ compress/lossy_quality=0.7
 compress/hdr_mode=0
 compress/bptc_ldr=0
 compress/normal_map=0
-flags/repeat=1
+flags/repeat=0
 flags/filter=false
 flags/mipmaps=false
 flags/anisotropic=false

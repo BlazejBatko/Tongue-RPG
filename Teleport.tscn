@@ -1,4 +1,4 @@
-[gd_scene load_steps=37 format=2]
+[gd_scene load_steps=38 format=2]
 
 [ext_resource path="res://StaticBody2D.gd" type="Script" id=1]
 [ext_resource path="res://Pixilart_Sprite_Sheet.png" type="Texture" id=2]
@@ -6,6 +6,7 @@
 [ext_resource path="res://Label.gd" type="Script" id=4]
 [ext_resource path="res://Polygon2D.gd" type="Script" id=5]
 [ext_resource path="res://Effects/TransitionScreen.tscn" type="PackedScene" id=6]
+[ext_resource path="res://Hint.gd" type="Script" id=7]
 
 [sub_resource type="Theme" id=1]
 
@@ -166,17 +167,41 @@ __meta__ = {
 }
 
 [node name="LineEdit" type="LineEdit" parent="Polygon2D"]
-margin_left = 4.5
-margin_top = 50.25
-margin_right = 86.5
-margin_bottom = 73.25
+margin_left = 6.75016
+margin_top = 48.5814
+margin_right = 88.7502
+margin_bottom = 73.5814
 custom_fonts/font = SubResource( 5 )
 custom_colors/font_color = Color( 0.109804, 0.580392, 0.721569, 1 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Polygon2D" type="Polygon2D" parent="Polygon2D"]
+[node name="HintPolygon" type="Polygon2D" parent="Polygon2D"]
+position = Vector2( 4.4396, 15.2618 )
+scale = Vector2( 1.10402, 0.749153 )
+color = Color( 0.0941176, 0.0941176, 0.0941176, 1 )
+polygon = PoolVector2Array( -69.9293, 47.9896, -54.3995, 47.9896, -33.693, 47.9896, -33.9314, 69.2036, -69.9293, 69.2036 )
+script = ExtResource( 5 )
+
+[node name="Hint" type="Label" parent="Polygon2D/HintPolygon"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = -66.4323
+margin_top = 52.3494
+margin_right = -37.4323
+margin_bottom = 66.3494
+size_flags_horizontal = 0
+size_flags_vertical = 0
+theme = SubResource( 1 )
+custom_fonts/font = SubResource( 3 )
+align = 1
+valign = 1
+autowrap = true
+script = ExtResource( 7 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [node name="Shadow" type="AnimatedSprite" parent="."]
 position = Vector2( 0.132446, 25 )
@@ -189,7 +214,7 @@ position = Vector2( -0.192048, -0.0394267 )
 scale = Vector2( 1.68056, 1.56311 )
 frames = SubResource( 29 )
 animation = "Animate"
-frame = 20
+frame = 13
 playing = true
 offset = Vector2( 0, -5 )
 
@@ -199,8 +224,9 @@ offset = Vector2( 0, -5 )
 position = Vector2( 0.132446, -0.132442 )
 shape = SubResource( 30 )
 
+[connection signal="body_entered" from="Area2D" to="Polygon2D" method="_on_Area2D_body_entered"]
+[connection signal="body_entered" from="Area2D" to="Polygon2D/HintPolygon" method="_on_Area2D_body_entered"]
 [connection signal="body_entered" from="Area2D" to="." method="_on_Area2D_body_entered"]
 [connection signal="body_entered" from="Area2D" to="Polygon2D/Label" method="_on_Area2D_body_entered"]
-[connection signal="body_entered" from="Area2D" to="Polygon2D" method="_on_Area2D_body_entered"]
-[connection signal="body_exited" from="Area2D" to="Polygon2D/Label" method="_on_Area2D_body_exited"]
 [connection signal="body_exited" from="Area2D" to="Polygon2D" method="_on_Area2D_body_exited"]
+[connection signal="body_exited" from="Area2D" to="Polygon2D/Label" method="_on_Area2D_body_exited"]

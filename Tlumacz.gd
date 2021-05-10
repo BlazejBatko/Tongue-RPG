@@ -1,32 +1,30 @@
-extends StaticBody2D
+extends Node
 var wpisany
 const SQLite = preload("res://addons/godot-sqlite/bin/gdsqlite.gdns")
 var db
-var count
 var db_name = "res://DataStore/database"
 var slowo
 var slowoAngielskie
-var stats = PlayerStats
 var rng = RandomNumberGenerator.new()
 onready var animacja = get_node("TransitionScreen")
-onready var inputField = get_node("Polygon2D/LineEdit")
+onready var inputField = get_node("Polygon2D/Tlumacz_Edit")
 onready var labelText = get_node("Polygon2D/Label")
-onready var hintText = get_node("Polygon2D/HintPolygon/Hint")
 
 func _ready():
 	db = SQLite.new()
 	db.path = db_name
 	inputField.connect("text_entered", self, "text_entered")
 	readFromDB()
-	hintText.visible_characters = 0	
+	$Polygon2D.visible = true
+	$Polygon2D/Tlumacz_Edit.visible = true
+	$Polygon2D/Label.visible = true
+	labelText.set_text("Przetłumacz podane słowo:\n"+slowo)
 	
 	
 func text_entered(text):
 	wpisany =inputField.text
 	
-	if wpisany != "":
-		sprawdzanie() 
-	
+	sprawdzanie() 
 	
 func _on_Area2D_body_entered(body):
 	labelText.set_text("Przetłumacz podane słowo:\n"+slowo)
@@ -45,29 +43,26 @@ func readFromDB():
 	
 func _input(event):
 	if event is InputEventKey:
-		if event.pressed and event.scancode == KEY_ENTER:
+		if event.pressed and event.scancode == KEY_K:
 			inputField.grab_focus()
 			if inputField.has_focus():
 				get_tree().paused = true
-				
-		if event.pressed and event.scancode == KEY_ESCAPE:
+		if event.pressed and event.scancode == KEY_L:
 			inputField.release_focus()
 			get_tree().paused = false	
-
+	
 	
 func sprawdzanie():
 	if wpisany == slowoAngielskie:
 		$TransitionScreen.transition()
 		yield(get_tree().create_timer(0.9),"timeout")
-		get_tree().change_scene("res://World2.tscn")
+		get_tree().change_scene("res://World_2.tscn")
 		$TransitionScreen/AnimationPlayer.play("fade_to_normal")
 		get_tree().paused = false
 		rng.randomize()
 		
 	else:
-		stats.health -= 1
-		hintText.text = slowoAngielskie
-		hintText.visible_characters = hintText.visible_characters + 1
+		print("niepoprawna")
 		
 
 	

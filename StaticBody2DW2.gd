@@ -59,7 +59,7 @@ func sprawdzanie():
 	if wpisany == slowoAngielskie:
 		$TransitionScreen.transition()
 		yield(get_tree().create_timer(0.9),"timeout")
-		get_tree().change_scene("res://World2.tscn")
+		get_tree().change_scene("res://World3.tscn")
 		$TransitionScreen/AnimationPlayer.play("fade_to_normal")
 		get_tree().paused = false
 		rng.randomize()

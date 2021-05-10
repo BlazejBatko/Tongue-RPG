@@ -1,0 +1,113 @@
+[gd_scene load_steps=12 format=2]
+
+[ext_resource path="res://MainMenu.gd" type="Script" id=1]
+[ext_resource path="res://Minecraftia-Regular.ttf" type="DynamicFontData" id=2]
+[ext_resource path="res://Music and Sounds/1.mp3" type="AudioStream" id=3]
+
+[sub_resource type="DynamicFontData" id=1]
+hinting = 0
+font_path = "res://Minecraftia-Regular.ttf"
+
+[sub_resource type="DynamicFont" id=2]
+size = 35
+font_data = SubResource( 1 )
+
+[sub_resource type="StyleBoxFlat" id=8]
+
+[sub_resource type="StyleBoxFlat" id=3]
+bg_color = Color( 0.0784314, 0.0784314, 0.0784314, 1 )
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+shadow_size = 5
+
+[sub_resource type="DynamicFont" id=4]
+font_data = ExtResource( 2 )
+
+[sub_resource type="StyleBoxFlat" id=7]
+
+[sub_resource type="StyleBoxFlat" id=5]
+bg_color = Color( 0.0784314, 0.0784314, 0.0784314, 1 )
+border_blend = true
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+shadow_size = 5
+
+[sub_resource type="DynamicFont" id=6]
+font_data = ExtResource( 2 )
+
+[node name="Control" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ColorRect" type="ColorRect" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 0.414246
+margin_top = 0.5
+margin_right = 0.414246
+margin_bottom = 0.5
+color = Color( 0, 0.239216, 0.160784, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="ColorRect"]
+anchor_left = 0.5
+anchor_right = 0.5
+margin_left = -122.0
+margin_top = 3.0
+margin_right = 123.0
+margin_bottom = 58.0
+custom_fonts/font = SubResource( 2 )
+text = "Tongue RPG"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Button" type="Button" parent="ColorRect"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -53.5
+margin_top = -13.0
+margin_right = 53.5
+margin_bottom = 13.0
+custom_styles/hover = SubResource( 8 )
+custom_styles/normal = SubResource( 3 )
+custom_fonts/font = SubResource( 4 )
+text = "Start"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Button2" type="Button" parent="ColorRect"]
+margin_left = 97.5
+margin_top = 129.443
+margin_right = 225.5
+margin_bottom = 157.443
+custom_styles/hover = SubResource( 7 )
+custom_styles/normal = SubResource( 5 )
+custom_fonts/font = SubResource( 6 )
+text = "Wyjdź z gry"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+pause_mode = 2
+stream = ExtResource( 3 )
+autoplay = true
+
+[connection signal="pressed" from="ColorRect/Button" to="." method="_on_Button_pressed"]
+[connection signal="pressed" from="ColorRect/Button2" to="." method="_on_Button2_pressed"]

@@ -1,28 +1,26 @@
 [gd_scene load_steps=4 format=2]
 
-[ext_resource path="res://World/Skull3 (1).png" type="Texture" id=1]
+[ext_resource path="res://World/water_1freeze.png" type="Texture" id=1]
 [ext_resource path="res://Shadows/LargeShadow.png" type="Texture" id=2]
 
-[sub_resource type="CapsuleShape2D" id=1]
-radius = 21.6598
-height = 0.0
+[sub_resource type="CircleShape2D" id=1]
+radius = 42.1782
 
-[node name="Rock" type="StaticBody2D"]
-position = Vector2( 11.816, -8.58115 )
+[node name="Lake" type="StaticBody2D"]
+position = Vector2( -6.87403, -6.58041 )
 scale = Vector2( 0.5, 0.5 )
 
 [node name="SpriteShadow" type="Sprite" parent="."]
-position = Vector2( -14.6678, 28.3482 )
+position = Vector2( 2.34111, 0 )
 scale = Vector2( 1.49748, 0.868898 )
 texture = ExtResource( 2 )
 offset = Vector2( 0, 10 )
 
 [node name="Sprite" type="Sprite" parent="."]
-position = Vector2( -8.00903, 8.01343 )
-scale = Vector2( 0.145703, 0.135024 )
+position = Vector2( 0, -4 )
 texture = ExtResource( 1 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2( -12.0135, 17.3529 )
+position = Vector2( 0.445435, -2.22723 )
 rotation = 1.5708
 shape = SubResource( 1 )

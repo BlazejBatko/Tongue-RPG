@@ -134,3 +134,7 @@ func _on_Button_pressed():
 	stats.health = 4
 	get_tree().paused = false
 	$TransitionScreen/AnimationPlayer.play("fade_to_normal")
+
+
+func _on_Button2_pressed():
+	pass # Replace with function body.
